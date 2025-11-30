@@ -10,8 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $schools_input = $_POST['schools_served'];
     $monthly_price = $_POST['monthly_price'];
     $yearly_price = $_POST['yearly_price'];
-    
-    // Clean up schools - trim whitespace from each school name
+
     $schools_array = explode(',', $schools_input);
     $schools_array = array_map('trim', $schools_array);
     $schools_served = implode(',', $schools_array);
@@ -38,4 +37,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+
 ?>

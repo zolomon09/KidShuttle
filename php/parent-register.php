@@ -8,8 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $child_name = $_POST['child_name'];
     $school_input = $_POST['school'];
     $location = $_POST['location'];
-    
-    // Trim whitespace from school name
+
     $school = trim($school_input);
     
     // Insert into users table
@@ -34,4 +33,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
+
 ?>

@@ -2,7 +2,6 @@
 session_start();
 include 'php/config.php';
 
-// Strong session check
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'driver') {
     header("Location: login.html");
     exit();
@@ -10,12 +9,10 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role
 
 $user_id = $_SESSION['user_id'];
 
-// Get driver's information with error handling
 $sql = "SELECT * FROM drivers WHERE user_id = '$user_id'";
 $result = $conn->query($sql);
 
 if (!$result || $result->num_rows == 0) {
-    // Driver data doesn't exist - maybe registration incomplete
     session_destroy();
     echo "<script>
             alert('Driver account not found. Please register again.');
@@ -34,7 +31,6 @@ $monthly_price = isset($driver['monthly_price']) ? $driver['monthly_price'] : 0;
 $yearly_price = isset($driver['yearly_price']) ? $driver['yearly_price'] : 0;
 $driver_id = $driver['id'];
 
-// Get subscribed children
 $sql_children = "SELECT s.*, p.child_name, p.parent_name, p.school, p.location, u.email 
                  FROM subscriptions s 
                  JOIN parents p ON s.parent_id = p.id 
@@ -42,7 +38,6 @@ $sql_children = "SELECT s.*, p.child_name, p.parent_name, p.school, p.location, 
                  WHERE s.driver_id = '$driver_id' AND s.status = 'active'";
 $children_result = $conn->query($sql_children);
 
-// Handle profile update
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     $new_schools = mysqli_real_escape_string($conn, $_POST['schools_served']);
     $new_monthly = mysqli_real_escape_string($conn, $_POST['monthly_price']);
@@ -55,12 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     exit();
 }
 
-// Handle location update (AJAX call)
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_location'])) {
     $latitude = mysqli_real_escape_string($conn, $_POST['latitude']);
     $longitude = mysqli_real_escape_string($conn, $_POST['longitude']);
-    
-    // Check if location exists
+
     $check = "SELECT * FROM driver_locations WHERE driver_id = '$driver_id'";
     $check_result = $conn->query($check);
     
@@ -594,4 +587,5 @@ function updateLocation() {
 </script>
 
 </body>
+
 </html>

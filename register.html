@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIDSHUTTLE • Choose Registration</title>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+
+<style>
+:root {
+    --primary: #3b5bfd;
+    --primary-soft: #e9edff;
+    --bg: #f5f7fc;
+    --white: #ffffff;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+body {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.choice-card {
+    width: 480px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 14px;
+    transition: 0.2s;
+}
+
+.parent-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.parent-btn:hover {
+    background: #2c47d6;
+}
+
+.driver-btn {
+    background: var(--white);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.driver-btn:hover {
+    background: var(--primary-soft);
+}
+</style>
+</head>
+
+<body>
+
+<div class="choice-card">
+
+    <div class="logo">KIDSHUTTLE</div>
+    <div class="subtitle">Choose how you want to register</div>
+
+    <button class="option-btn parent-btn" onclick="location.href='register-parent.html'">
+        Register as Parent
+    </button>
+
+    <button class="option-btn driver-btn" onclick="location.href='register-driver.html'">
+        Register as Driver
+    </button>
+
+</div>
+
+</body>
+</html>

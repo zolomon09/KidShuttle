@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIDSHUTTLE • Safe School Commute</title>
+
+    <style>
+        :root {
+            --primary: #3b5bfd;
+            --primary-light: #e9edff;
+            --dark: #1b2430;
+            --bg: #f5f7fc;
+            --white: #ffffff;
+            --radius: 14px;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 18px 60px;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 28px;
+            font-size: 14px;
+            color: #444;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 14px;
+            cursor: pointer;
+
+            color: var(--white);
+            background: var(--primary);
+            transition: 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #2b45c7;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 70px 60px;
+            background: radial-gradient(circle at top left, #e9edff, var(--bg) 55%);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .hero-btns button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            margin-right: 14px;
+        }
+
+        .primary-btn {
+            color: var(--white);
+            background: var(--primary);
+            box-shadow: 0 10px 18px rgba(59, 91, 253, 0.35);
+        }
+
+        .primary-btn:hover {
+            background: #2c47d6;
+        }
+
+        .secondary-btn {
+            color: var(--primary);
+            background: var(--white);
+            border: 1px solid var(--primary-light);
+        }
+
+        /* HERO INFO BOX */
+        .hero-box {
+            width: 360px;
+            padding: 24px;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-box h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .hero-box p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 999px;
+
+            background: var(--primary-light);
+            color: var(--primary);
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        /* SECTIONS */
+        .features {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .features p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        .feature-grid {
+            margin-top: 40px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+        }
+
+        .feature-card {
+            width: 280px;
+            padding: 22px;
+
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+            text-align: left;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* CALL TO ACTION */
+        .cta {
+            padding: 70px 60px;
+            margin-top: 50px;
+
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #3b5bfd, #657dff);
+
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+
+        .cta button {
+            margin-top: 16px;
+            padding: 14px 26px;
+            font-size: 16px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+
+            color: var(--primary);
+            background: white;
+        }
+
+        .cta button:hover {
+            background: #ffffffcc;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 22px;
+            text-align: center;
+            color: #777;
+            background: var(--white);
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">KIDSHUTTLE</div>
+
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="auth-buttons">
+            <button class="nav-btn" onclick="location.href='login.html'">Login</button>
+            <button class="nav-btn" onclick="location.href='register.html'">Register</button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>Safe, Smart & Reliable<br><span>Daily School Shuttle</span> for Kids</h1>
+
+            <p>
+                A monthly subscription-based shuttle service designed exclusively for school-going children.
+                With verified drivers, fixed routes, and real-time tracking, KIDSHUTTLE ensures a secure and stress-free daily
+                commute.
+            </p>
+
+            <div class="hero-btns">
+                <button class="primary-btn" onclick="location.href='register.html'">Start Now</button>
+            </div>
+        </div>
+
+        <div class="hero-box">
+            <h3>Today's Shuttle • 7:30 AM</h3>
+            <p>Route: Sunrise Residency → Green Valley School</p>
+
+            <span class="badge">Verified Driver</span>
+            <span class="badge">Live Tracking</span>
+            <span class="badge">No IoT Required</span>
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <h2>Why Choose KIDSHUTTLE?</h2>
+        <p>A complete child-focused mobility system built with safety & transparency.</p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Verified Drivers</h3>
+                <p>All drivers are background-checked and trained for child safety.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Live GPS Tracking</h3>
+                <p>Parents track shuttle movement in real time from pick-up to drop.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Fixed Routes</h3>
+                <p>Optimized and punctual shuttle routes ensure smooth travel.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Monthly Subscription</h3>
+                <p>Simple fixed pricing instead of random daily cab costs.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="features" id="about">
+
+        <h2>About KIDSHUTTLE</h2>
+        <p>
+            KIDSHUTTLE is a safe, organized, and technology-driven shuttle service designed exclusively for school-going
+            children.
+            Built as a monthly subscription model, it replaces unorganized vans and unsafe commute options with a structured,
+            reliable and trackable mobility ecosystem.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Built for Kids</h3>
+                <p>Every feature is centered around child safety — verified drivers, fixed routes, and secured management.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Peace of Mind for Parents</h3>
+                <p>Real-time shuttle tracking, reliable schedules, and complete transparency for worry-free mornings.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Organized & Reliable Mobility</h3>
+                <p>A modern alternative to unsafe vans — standardized, monitored, and community-friendly transport.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Start Your Child’s Safe Journey Today</h2>
+        <p>A structured, stress-free mobility system for school kids.</p>
+
+        <button onclick="location.href='register.html'">Join Now</button>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 KIDSHUTTLE (Developed By Teen Loopers) <br>  Safe School Travel for Children
+    </footer>
+
+</body>
+
+</html>
+

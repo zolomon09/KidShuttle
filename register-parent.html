@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIDSHUTTLE • Parent Registration</title>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+
+<style>
+:root {
+    --primary: #3b5bfd;
+    --primary-soft: #e0e7ff;
+    --bg: #f5f7ff;
+    --white: #ffffff;
+    --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+body {
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-card {
+    width: 480px;
+    background: var(--white);
+    padding: 40px 50px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group { text-align: left; margin-bottom: 16px; }
+.input-group label { font-size: 14px; font-weight: 500; margin-bottom: 6px; display: block; }
+.input-group input {
+    width: 100%; padding: 12px; border-radius: 10px;
+    border: 1px solid #ccd4e3; font-size: 14px;
+}
+.btn-primary {
+    width: 100%; padding: 12px; background: var(--primary);
+    color: white; border-radius: 10px; border: none; font-size: 16px;
+    cursor: pointer; margin-top: 12px;
+}
+.btn-primary:hover { background: #263ccf; }
+
+.back-link {
+    margin-top: 14px;
+    font-size: 14px;
+}
+.back-link a {
+    color: var(--primary);
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-card">
+
+    <div class="logo">KIDSHUTTLE</div>
+    <div class="subtitle">Parent Registration</div>
+
+    <div class="subtitle">Create your parent account</div>
+
+    <form action="php/parent-register.php" method="POST">
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" name="parent_name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" name="email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Child's Name</label>
+            <input type="text" placeholder="Enter your child's name" name="child_name" required>
+        </div>
+
+        <div class="input-group">
+            <label>School</label>
+            <input type="text" placeholder="Enter your child's school" name="school" required>
+        </div>
+
+        <div class="input-group">
+            <label>Pick Up Location</label>
+            <input type="text" placeholder="Enter your pick up location" name="location" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Create a password" name="password" required>
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password" required>
+        </div>
+
+        <button class="btn-primary" type="submit">Register</button>
+    </form>
+
+    <div class="back-link">
+        Want to register as Driver? <a href="register-driver.html">Click here</a><br>
+        Back to <a href="register.html">Account Type Selection</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIDSHUTTLE • Login</title>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+
+<style>
+    :root {
+        --primary: #3b5bfd;
+        --primary-light: #e8edff;
+        --white: #ffffff;
+        --text: #333;
+        --bg: #f5f7fc;
+        --radius: 12px;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-card {
+        width: 380px;
+        background: var(--white);
+        padding: 40px 34px;
+        border-radius: var(--radius);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 22px;
+    }
+
+    .input-group {
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        margin-top: 6px;
+        padding: 12px 14px;
+        border-radius: var(--radius);
+        border: 1px solid #d3d7e6;
+        font-size: 14px;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    input:focus {
+        border-color: var(--primary);
+        background: var(--primary-light);
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        font-size: 16px;
+        border-radius: var(--radius);
+        cursor: pointer;
+        margin-top: 8px;
+        transition: 0.2s;
+    }
+
+    .login-btn:hover {
+        background: #2e4be0;
+    }
+
+    .bottom-text {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="login-card">
+    <div class="logo">KIDSHUTTLE</div>
+
+    <form action="php/login.php" method="POST">
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" name="email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" name="password" required>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="bottom-text">
+        Don’t have an account? <a href="register.html">Register Here</a>
+    </div>
+</div>
+
+</body>
+</html>

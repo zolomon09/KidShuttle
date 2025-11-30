@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIDSHUTTLE • Child Profile</title>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+
+<style>
+    :root {
+        --primary: #3b5bfd;
+        --primary-soft: #e8edff;
+        --bg: #f5f7ff;
+        --white: #ffffff;
+        --text: #333;
+        --muted: #777;
+        --radius: 12px;
+        --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: var(--bg);
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 250px;
+        background: var(--white);
+        padding: 25px;
+        box-shadow: 4px 0 18px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 25px;
+    }
+
+    .nav-title {
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 12px;
+        font-size: 14px;
+        color: var(--text);
+        text-decoration: none;
+        border-radius: var(--radius);
+        margin-bottom: 8px;
+        transition: 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        font-size: 13px;
+    }
+
+    .sidebar-footer a {
+        color: #e63946;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    /* MAIN */
+    .main {
+        flex: 1;
+        padding: 32px 40px;
+        overflow-y: auto;
+    }
+
+    .header-title {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .header-sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 25px;
+    }
+
+    /* CARD */
+    .card {
+        background: var(--white);
+        padding: 24px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        color: var(--primary);
+        margin-bottom: 12px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    .info-row span {
+        font-size: 14px;
+    }
+
+    .label {
+        font-weight: 600;
+        color: #444;
+    }
+
+    .value {
+        color: var(--muted);
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <div class="logo">KIDSHUTTLE</div>
+
+    <div class="nav-title">Parent Panel</div>
+
+    <div class="nav-links">
+        <a href="parent-dashboard.html">Dashboard</a>
+        <a href="parent-child-profile.html" class="active">Child Profile</a>
+        <a href="parent-assigned-shuttle.html">Assigned Shuttle</a>
+        <a href="parent-live-tracking.html">Live Tracking</a>
+        <a href="parent-subscription.html">Subscription</a>
+        <a href="parent-settings.html">Settings</a>
+    </div>
+
+    <div class="sidebar-footer">
+        <a href="parent-login.html">Logout</a>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <div class="header-title">Child Profile</div>
+    <div class="header-sub">View complete details about your child.</div>
+
+    <!-- PERSONAL DETAILS -->
+    <div class="card">
+        <h3>Personal Details</h3>
+
+        <div class="info-row">
+            <span class="label">Name:</span>
+            <span class="value">Rahul Sharma</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Age:</span>
+            <span class="value">9 years</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Class:</span>
+            <span class="value">4 B</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">School:</span>
+            <span class="value">Green Valley School</span>
+        </div>
+    </div>
+
+    <!-- PICKUP & DROP DETAILS -->
+    <div class="card">
+        <h3>Pickup & Drop Details</h3>
+
+        <div class="info-row">
+            <span class="label">Pickup Location:</span>
+            <span class="value">Sunrise Residency Gate 1</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Drop Location:</span>
+            <span class="value">Green Valley School - Gate 2</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Pickup Time:</span>
+            <span class="value">7:30 AM</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Drop Time:</span>
+            <span class="value">1:45 PM</span>
+        </div>
+    </div>
+
+    <!-- EMERGENCY CONTACTS -->
+    <div class="card">
+        <h3>Emergency Contacts</h3>
+
+        <div class="info-row">
+            <span class="label">Father:</span>
+            <span class="value">Anuj Sharma (98765XXXXX)</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Mother:</span>
+            <span class="value">Neha Sharma (98765YYYYY)</span>
+        </div>
+    </div>
+
+    <!-- HEALTH / NOTES -->
+    <div class="card">
+        <h3>Health & Safety Notes</h3>
+
+        <div class="info-row">
+            <span class="label">Allergies:</span>
+            <span class="value">None</span>
+        </div>
+
+        <div class="info-row">
+            <span class="label">Special Instructions:</span>
+            <span class="value">Carry water bottle & lunchbox</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
